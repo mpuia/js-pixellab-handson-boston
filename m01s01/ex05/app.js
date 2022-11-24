@@ -1,20 +1,18 @@
-var inputLength = document.getElementById('length');
-var inputWidth = document.getElementById('width');
+var inputRadius = document.getElementById('radius');
 var elementResult = document.getElementById('result');
 var form = document.querySelector('form');
 
 form.addEventListener(
   'submit',
   function (event) {
-    // event.prevent default obligatoriu
     event.preventDefault();
-    var length = inputLength.value || 0;
-    var width = inputWidth.value || 0;
+    var radius = inputRadius.value || 0;
     var result = 0;
 
-    result = length * width;
+    result = (4 / 3) * (Math.PI * Math.pow(radius, 3));
 
     elementResult.innerText = result;
   },
   false,
 );
+//  Rezultatul asteptat este 1436.7550402417319, dar formularul a calculat: 1436.755040241732.
