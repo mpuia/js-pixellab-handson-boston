@@ -81,3 +81,11 @@ console.warn(`
 Afiseaza numarul de caractere al numelui de familie al lui Steven
 `);
 console.log(person.friends.steven.surname.length.toString());
+
+console.warn(`Calculeaza diferenta dintre numarul de caractere al numelor lui Steven si Carol.
+`);
+
+console.log(
+  person.friends.steven.name.length.toString() -
+    person.friends.carol.name.length.toString(),
+);
