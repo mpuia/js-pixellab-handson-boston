@@ -24,8 +24,6 @@ var person = {
 };
 
 var year = 2022;
-var difference = -11;
-var petName = 'Patrick';
 
 console.warn(`Afiseaza propozitia:
 “Numele meu este: xxx yyy si am x animale.”.
@@ -54,23 +52,22 @@ console.log(
   'Unul din cele ' +
     person.pets.length +
     ' animale ale mele este ' +
-    person.pets[1].species,
-  +' si are ' + person.pets[1].age + ' ani.',
+    person.pets[1].species.toString() +
+    ' si are ' +
+    person.pets[1].age.toString() +
+    ' ani.',
 );
-// de ce nu imi ia age? - in pixeltab imi apare "NaN"
 
 console.warn(`Calculeaza si afiseaza (folosind anul curent)
 anul de nastere al animalului de pe pozitia 2.
 `);
-console.log(`${year}` - person.pets[2].age);
-// nici pe acesta nu il ia desi in consola apare ok
+console.log((year - person.pets[2].age).toString());
 
 console.warn(`Calculeaza si salveaza in variabila
 difference diferenta de ani dintre persoana si animalul
 de pe pozitia 0 si afiseaza aceasta diferenta.
 Foloseste anul curent. `);
-console.log(`${year}` - person.birthYear - person.pets[0].age);
-// nici pe acesta nu il ia desi in consola apare ok
+console.log((year - person.birthYear - person.pets[0].age).toString());
 
 console.warn(`Afiseaza propozitia: “Intre firstName si
 petName este o diferenta de difference ani.”.
@@ -79,15 +76,20 @@ console.log(
   'Intre ' +
     person.firstName +
     ' si ' +
-    petName +
+    person.pets[0].name +
     ' este o diferenta de ' +
-    difference +
+    (year - person.birthYear - person.pets[0].age).toString() +
     ' ani.',
 );
 
 console.warn(`Folosind metoda document.getElementById()
 afiseaza urmatoarele 5 afirmatii despre obiectul person. `);
 // aici no entiendo ce trebuie sa fac
+
+var hobbies = document.getElementById('prop01');
+var education = document.getElementById('prop02');
+var music = document.getElementById('prop03');
+var sports = document.getElementById('prop04');
 
 console.warn(`Afiseaza propozitia
 “ firstName, pet1, pet2, pet3 locuiesc toti in aceeasi casa” (folosind bracket notation pe arrayul pets)
