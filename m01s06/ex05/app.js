@@ -2,7 +2,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     const showButton = document.querySelector('#showButtton');
     const toggleEventButton = document.querySelector('#toggleEventButton');
-    const removeButton = document.querySelector('#removeButton');
+    const removeButton = document.getElementById('removeButtons');
     const eventBound = true;
 
     showButton.addEventListener('click', showAlert);
@@ -10,7 +10,7 @@
 
     removeButton.addEventListener('click', function () {
       // early return
-      if (!confirm('Stergem butoanele?')) {
+      if (confirm('Stergem butoanele?') !== true) {
         return;
       }
 
@@ -60,3 +60,5 @@
     }
   });
 })();
+
+// check with dragos

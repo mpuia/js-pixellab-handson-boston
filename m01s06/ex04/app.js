@@ -2,14 +2,16 @@
   document.addEventListener('DOMContentLoaded', function () {
     const stage = document.querySelector('.stage');
 
-    stage.addEventListener('mouseover', () => {
+    stage.addEventListener('mouseover', function () {
       const message = 'Mouseul este pe scena';
       console.log(message);
       showMessage(message);
     });
 
     stage.addEventListener('mouseout', () => {
-      console.log('Mouseul nu este pe scena');
+      const message = 'Mouseul nu este pe scena';
+      console.log(message);
+      showMessage(message);
     });
 
     // function functions are hoisted
